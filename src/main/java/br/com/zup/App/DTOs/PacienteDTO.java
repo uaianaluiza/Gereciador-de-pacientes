@@ -3,6 +3,7 @@ package br.com.zup.App.DTOs;
 import br.com.zup.App.models.Paciente;
 
 public class PacienteDTO {
+
     private String nome;
     private int idade;
     private String cpf;
@@ -34,11 +35,11 @@ public class PacienteDTO {
         this.cpf = cpf;
     }
 
-    public static Paciente converterDTOparaPaciente(PacienteDTO pacienteDTO){
+    public Paciente converterDTOparaPaciente(){
         Paciente paciente = new Paciente();
-        paciente.setNome(pacienteDTO.getNome());
-        paciente.setCpf(pacienteDTO.getCpf());
-        paciente.setIdade(pacienteDTO.getIdade());
+        paciente.setNome(this.nome);
+        paciente.setCpf(this.cpf);
+        paciente.setIdade(this.idade);
 
         return paciente;
     }
