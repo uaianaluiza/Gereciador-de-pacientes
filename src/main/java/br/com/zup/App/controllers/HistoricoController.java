@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 
-public class HistoricoService {
+public class HistoricoController {
 
     @Autowired
-    private HistoricoService historicoService;
+    private HistoricoController historicoService;
 
     @PostMapping("{cpf}/")
     public Historico registrarHistorico(@RequestBody Historico historico, @PathVariable String cpf){

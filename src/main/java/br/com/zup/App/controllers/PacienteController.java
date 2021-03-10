@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("pacientes/")
 
@@ -19,7 +21,7 @@ public class PacienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Paciente cadastrarPaciente(@RequestBody PacienteDTO pacienteDTO){
+    public Paciente cadastrarPaciente(@RequestBody @Valid PacienteDTO pacienteDTO){
         Paciente objetoPaciente = pacienteService.salvarPaciente(pacienteDTO.converterDTOparaPaciente());
         return objetoPaciente;
     }
